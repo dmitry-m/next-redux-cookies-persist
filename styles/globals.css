@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toastify-color-dark: hsl(var(--n));
+  --toastify-color-success: hsl(var(--su));
+  --toastify-color-error: hsl(var(--er));
+}
+
+@media screen and (width <= 480px) {
+  .Toastify__toast {
+    @apply mb-2;
+  }
+}
+
+body {
+  @apply w-full;
+
+  background: repeating-linear-gradient(-45deg, hsl(var(--b1)), hsl(var(--b3)) 6px);
+}

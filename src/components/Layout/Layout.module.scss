@@ -1,0 +1,9 @@
+.body {
+  @apply mx-auto flex max-w-screen-2xl flex-col p-4;
+
+  min-height: 100vh;
+}
+
+.main {
+  @apply rounded-box mt-4 flex flex-1 grow content-center justify-center self-stretch bg-base-100 shadow-xl;
+}

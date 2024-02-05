@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order",
+    "stylelint-config-tailwindcss"
+  ],
+  "plugins": ["stylelint-scss", "stylelint-order", "stylelint-color-format"],
+  "rules": {
+    "import-notation": "string",
+    "no-descending-specificity": null,
+    "indentation": [2],
+    "color-format/format": {
+      "format": "rgb"
+    },
+    "at-rule-no-unknown": [
+      true,
+      { "ignoreAtRules": ["function", "if", "each", "include", "mixin", "tailwind"] }
+    ],
+    "function-no-unknown": [true, { "ignoreFunctions": ["theme", "darken"] }],
+    "color-hex-case": "upper",
+    "selector-class-pattern": "^.*$",
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": ["/grid/"]
+      }
+    ]
+  }
+}

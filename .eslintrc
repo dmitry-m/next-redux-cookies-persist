@@ -1,0 +1,95 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "import", "react", "react-hooks"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "eslint:recommended",
+    "plugin:eqeqeq-fix/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "no-console": 0,
+    "no-void": 0,
+    "react/jsx-uses-react": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/function-component-definition": 0,
+    "import/no-cycle": 0,
+    "@typescript-eslint/no-misused-promises": [
+      2,
+      {
+        "checksVoidReturn": {
+          "attributes": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "semi": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "printWidth": 100,
+        "endOfLine": "auto"
+      }
+    ],
+    "import/order": [
+      2,
+      {
+        "groups": ["external", "builtin", "index", "sibling", "internal", "type"],
+        "pathGroups": [
+          {
+            "pattern": "(components|screens|ui|config)*",
+            "group": "internal"
+          },
+          {
+            "pattern": "./*.+(css|sass|less|scss|pcss|styl)",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "./*.+(props)",
+            "group": "type"
+          },
+          {
+            "pattern": "types*",
+            "group": "type"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
+  }
+}
