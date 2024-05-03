@@ -183,6 +183,21 @@ The project includes the following features:<br>
 
 ## 💻 Code Summary
 
+i organized my codebase into various directories and files to maintain a clean and structured project. Here's a brief summary of the important files and directories:<br>
+
+- Root: Configuration files for Next.js, PostCSS, and Prettier.
+- Pages: Next.js page components for different routes and screens.
+- Components: Reusable UI components and providers used throughout the application.
+- Hooks: Custom hooks for handling authentication and redirection.
+- Icons: SVG icons used in the application.
+- Screens: React components for different screens and pages in the application.
+- Services: API client and authentication service.
+- Store: Redux store, actions, and reducers for user management and queries.
+- Types: TypeScript interfaces and types used in the project.
+- Utils: Utility functions for formatting and manipulating text.
+
+## I hope you find my Next.js SSR Auth App for User Management with Redux helpful and easy to navigate. Happy coding!
+
 <details><summary>Root</summary>
 
 | File               | Summary                                                                                                                                                                                                                                                                |

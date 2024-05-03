@@ -1,43 +1,44 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictPropertyInitialization": false,
-    "experimentalDecorators": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "paths": {
+      "components": ["./src/components"],
+      "components*": ["./src/components*"],
+      "config": ["./src/config"],
+      "hooks": ["./src/hooks"],
+      "icons*": ["./src/icons*"],
+      "screens": ["./src/screens"],
+      "services": ["./src/services"],
+      "store": ["./src/store"],
+      "styles": ["./styles"],
+      "styles*": ["./styles*"],
+      "types": ["./src/types"],
+      "ui": ["./src/components/ui"],
+      "ui*": ["./src/components/ui*"],
+      "utils": ["./src/utils"],
+      "react": ["./node_modules/@types/react"]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "paths": {
-      "screens": ["./src/screens"],
-      "components*": ["./src/components*"],
-      "components": ["./src/components"],
-      "ui*": ["./src/components/ui*"],
-      "ui": ["./src/components/ui"],
-      "services": ["./src/services"],
-      "store": ["./src/store"],
-      "types": ["./src/types"],
-      "hooks": ["./src/hooks"],
-      "config": ["./src/config"],
-      "utils": ["./src/utils"],
-      "icons*": ["./src/icons*"],
-      "styles*": ["./styles*"],
-      "styles": ["./styles"]
-    }
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "target": "es5"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["**/node_modules", "**/.*/"]
+  "exclude": ["**/node_modules", "**/.*/"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }

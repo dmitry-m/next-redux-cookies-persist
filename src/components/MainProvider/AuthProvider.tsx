@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { Theme, ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
 import { selectUser, useAppSelector } from "store";
 
@@ -15,33 +13,22 @@ export function AuthProvider({ children, Component }: AuthProviderProps): JSX.El
     tokens: { accessToken },
   } = useAppSelector(selectUser);
 
-  const { theme, resolvedTheme } = useTheme();
-  const [colorTheme, setColorTheme] = useState<string | undefined>(theme);
-
   useEffect(() => {
-    setColorTheme(theme === "system" ? resolvedTheme : theme);
-  }, [theme]);
-
-  useEffect(() => {
-    if (Component.auth === "admin" && !user.isAdmin) {
-      let redirect = "/404";
+    if (Component.auth && !accessToken) void push("/auth/login");
+    else if (Component.auth === "admin" && !user.isAdmin) {
+      const redirect = "/404";
       if (pathname !== redirect && pathname !== "/auth/login") {
-        redirect = query.redirect ? String(query.redirect) : redirect;
-        void push(redirect);
+        const redirectPath = query.redirect ? String(query.redirect) : redirect;
+        void push(redirectPath);
       }
-    } else if (Component.auth && !accessToken) void push("/auth/login");
-  }, [accessToken, Component]);
+    }
+  }, [accessToken, Component, user.isAdmin]);
 
   if (!Component.auth || user.isAdmin || (accessToken && Component.auth === "user")) {
-    return (
-      <>
-        <ToastContainer theme={colorTheme as Theme} />
-        {children}
-      </>
-    );
+    return children;
   }
 
-  return <ToastContainer theme={colorTheme as Theme} />;
+  return <div />;
 }
 
 export default AuthProvider;

@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -51,10 +51,7 @@ export const Navbar = (): JSX.Element => {
                 <User className="h-5 w-5" />
               </div>
             </label>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-box menu-sm mt-3 w-52 bg-base-100 p-2 shadow"
-            >
+            <ul className="dropdown-content menu rounded-box menu-sm mt-3 w-52 bg-base-100 p-2 shadow">
               <li>
                 <Link href="/profile">Profile</Link>
               </li>

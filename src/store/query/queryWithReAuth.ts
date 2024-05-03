@@ -13,7 +13,6 @@ const baseQuery = fetchBaseQuery({
   prepareHeaders: (headers, { getState }) => {
     const accessToken = (getState() as AppState)?.user?.tokens?.accessToken;
 
-    // If we have a token set in state, let's assume that we should be passing it.
     if (accessToken) {
       headers.set("authorization", `Bearer ${accessToken}`);
     }

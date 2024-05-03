@@ -9,7 +9,7 @@ services:
       target: runner
     volumes:
       - .:/app
-    command: npm run dev
+    command: yarn run dev
     env_file:
       - .env
     environment:
